@@ -30,7 +30,7 @@ public class Main {
                     comments.getComments();
                 }
                 case '3' -> {
-                    System.out.println("Tempetures");
+                    System.out.println("Temperatures");
                     AverageTemp averageTemp = new AverageTemp();
                     averageTemp.getTemp();
                 }
