@@ -1,14 +1,14 @@
 package com.company;
 
 class StringMetoder {
-    static boolean ärPalindrom(String s) {
-        return s.equals(baklänges(s));
+    static boolean isPalindrom(String s) {
+        return s.equals(backWards(s));
     }
 
-    static String baklänges(String s) {
-        String r = "";
+    static String backWards(String s) {
+        StringBuilder r = new StringBuilder();
         for (int i = s.length() - 1; i >= 0; i--)
-            r = r + s.charAt(i);
-        return r;
+            r.append(s.charAt(i));
+        return r.toString();
     }
 }

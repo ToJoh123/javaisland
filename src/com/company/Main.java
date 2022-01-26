@@ -1,10 +1,11 @@
 package com.company;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         boolean isRunning = true;
 
         while (isRunning) {
@@ -13,17 +14,26 @@ public class Main {
             String s = input.nextLine();
             switch (s.charAt(0)) {
                 case '1' -> {
-                    System.out.println("Palindrom");
+                    System.out.println("Palindrome");
                     var scan = new Scanner(System.in);
-                    System.out.print("Skriv en text? " );
+                    System.out.print("Write a text? ");
                     String s2 = scan.nextLine();
-                    if (com.company.StringMetoder.ärPalindrom(s2))
-                        System.out.println("Palindrom");
+                    if (com.company.StringMetoder.isPalindrom(s2))
+                        System.out.println("Palindrome");
                     else
-                        System.out.println("Inte palindrom");
+                        System.out.println("not palindrome");
 
                 }
-                case '2' -> System.out.println("Man");
+                case '2' -> {
+                    System.out.println("Read comments from file");
+                    Comments comments = new Comments();
+                    comments.getComments();
+                }
+                case '3' -> {
+                    System.out.println("Tempetures");
+                    AverageTemp averageTemp = new AverageTemp();
+                    averageTemp.getTemp();
+                }
                 case '?' -> System.out.println("type 1-2 to choose program :");
                 default -> {
                     System.out.println("Invalid choice, E to exit");
@@ -35,9 +45,6 @@ public class Main {
 
             }
         }
-    }
-
-    private static class StringMetoder {
     }
 }
 
